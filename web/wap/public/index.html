@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="" id="html">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+  <link rel="icon" href="/bitbug_favicon-8.ico" id="icon_gauss">
+  <title>
+    icplaza
+  </title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+<script type="text/javascript">
+  window.onload = function () {
+    window.onresize = function () {
+      infinite()
+    }
+    function infinite() {
+      var html = document.querySelector('html');
+      var width = html.getBoundingClientRect().width;
+      html.style.fontSize = width / 10 + 'px'; // 把屏幕的大小分成 10等分
+    }
+    infinite();
+  }
+</script>
+
+</html>
