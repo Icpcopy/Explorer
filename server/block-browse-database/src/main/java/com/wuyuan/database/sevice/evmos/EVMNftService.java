@@ -36,8 +36,8 @@ public class EVMNftService {
         this.mongoTemplate.updateFirst(query,update,COLLECTUIB_NAME);
 
     }
-    public void updateOwner(String id,String owner){
-        Query query = new Query(Criteria.where("hash").is(id));
+    public void updateOwner(String id,String owner,String nftId){
+        Query query = new Query(Criteria.where("hash").is(id).andOperator(Criteria.where("nftId").is(nftId)));
         Update update = new Update();
         update.set("owner", owner);
         this.mongoTemplate.updateFirst(query,update,COLLECTUIB_NAME);

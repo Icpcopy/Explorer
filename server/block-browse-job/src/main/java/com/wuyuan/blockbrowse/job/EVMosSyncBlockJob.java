@@ -162,7 +162,7 @@ public class EVMosSyncBlockJob {
                             if (nft != null) {
                                 nft.setTransactionCount(nft.getTransactionCount() + 1);
                                 if ("0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef".equalsIgnoreCase(log.getTopics().get(0))) {
-                                    evmNftService.updateOwner(nft.getHash(), Erc20AddressUtil.topic2Address(log.getTopics().get(2)));
+                                    evmNftService.updateOwner(nft.getHash(), Erc20AddressUtil.topic2Address(log.getTopics().get(2)),nft.getNftId());
                                 }
                                 evmNftService.updateTranctionCount(nft.getHash(), nft.getTransactionCount());
                             }else {
